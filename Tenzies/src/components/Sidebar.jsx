@@ -14,8 +14,8 @@ function Sidebar() {
         </p>
       </div>
       <div className="sidebar-game-buttons text-center">
-        <button className="mx-2 my-2">Play Game</button>
-        <button className="mx-2 my-2">Reset Game</button>
+        <button className="mx-2 my-2 hover:bg-bright-yellow hover:text-dark-purple">Play Game</button>
+        <button className="mx-2 my-2 hover:bg-bright-yellow hover:text-dark-purple">Reset Game</button>
       </div>
     </div>
   )
