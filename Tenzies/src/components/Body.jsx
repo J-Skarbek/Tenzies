@@ -1,4 +1,5 @@
 import React from "react";
+import Die from "./Die";
 
 function Body() {
 
@@ -8,8 +9,19 @@ function Body() {
         <h2 className="text-5xl font-bold">Tenzies</h2>
         <p className="text-xl">Roll until all dice are the same. 
         Click each die to freeze it at its current value between rolls.</p>
-        <div className="dice-container">
-
+        <div className="dice-container-1 flex space-evenly items-center justify-center flex-wrap gap-3">
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+        </div>
+        <div className="dice-container-2 flex space-evenly items-center justify-center flex-wrap gap-3">
+          <Die />
+          <Die />
+          <Die />
+          <Die />
+          <Die />
         </div>
         <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple">Roll Dice</button>
       </div>
