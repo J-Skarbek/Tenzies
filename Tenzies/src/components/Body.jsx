@@ -23,8 +23,10 @@ function Body() {
   function generateDice() {
     const values = diceValues.map((die, i) =>
         <Die
-          key={i} 
+          key={i}
+          index={i}
           value={die}
+          holdDice={holdDice}
         />
     )
     return values
@@ -32,6 +34,10 @@ function Body() {
 
   function rollDice() {
     setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
+  }
+
+  function holdDice() {
+    console.log('testing click')
   }
 
   return (
