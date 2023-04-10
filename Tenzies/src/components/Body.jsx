@@ -7,7 +7,7 @@ function Body() {
 
   const [value, setValue] = React.useState(Math.ceil(Math.random() * 6));
 
-  const [diceValues, setDiceValues] = React.useState([
+  const [diceValues, setDiceValues] = React.useState(() => [
     Math.ceil(Math.random() * 6),
     Math.ceil(Math.random() * 6),
     Math.ceil(Math.random() * 6),
