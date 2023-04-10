@@ -22,11 +22,16 @@ function Body() {
 
   function generateDice() {
     const values = diceValues.map((die, i) =>
-        <Die 
+        <Die
+          key={i} 
           value={die}
         />
     )
     return values
+  }
+
+  function rollDice() {
+    setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
   }
 
   return (
@@ -41,7 +46,7 @@ function Body() {
         {/* <div className="dice-container-2 flex space-evenly items-center justify-center flex-wrap gap-3">
           { generateDice() }
         </div> */}
-        <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple">Roll Dice</button>
+        <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple" onClick={rollDice}>Roll Dice</button>
       </div>
     </div>
   )
