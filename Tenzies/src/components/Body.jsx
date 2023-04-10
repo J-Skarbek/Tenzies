@@ -36,8 +36,13 @@ function Body() {
     setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
   }
 
-  function holdDice() {
+  function holdDice(e) {
     console.log('testing click')
+    console.log(e.target)
+    // e.target.classList.remove('font-bold')
+    e.target.classList.toggle('bg-mid-blue')
+    e.target.classList.toggle('text-white')
+
   }
 
   return (
