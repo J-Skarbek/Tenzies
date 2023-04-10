@@ -26,7 +26,8 @@ function Body() {
   }
 
   function rollDice() {
-    setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
+    // setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
+    setDiceValues(getDiceValues())
   }
 
   function holdDice(e) {
@@ -36,6 +37,8 @@ function Body() {
     e.target.classList.toggle('bg-mid-blue')
     e.target.classList.toggle('text-white')
   }
+
+  console.log(diceValues)
 
   return (
     <div className="body-container col-start-6 col-span-5 row-start-2 row-span-3 bg-dark-purple p-8">
