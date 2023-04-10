@@ -3,22 +3,15 @@ import Die from "./Die";
 
 function Body() {
 
-  // const [value, setValue] = React.useState(4);
+  const [diceValues, setDiceValues] = React.useState(() => getDiceValues());
 
-  const [value, setValue] = React.useState(Math.ceil(Math.random() * 6));
-
-  const [diceValues, setDiceValues] = React.useState(() => [
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-    Math.ceil(Math.random() * 6),
-  ]);
+  function getDiceValues() {
+    const dice = [];
+    for (let i = 0; i < 10; i++) {
+      dice.push(Math.ceil(Math.random() * 6));
+    }
+    return dice;
+  }
 
   function generateDice() {
     const values = diceValues.map((die, i) =>
@@ -42,7 +35,6 @@ function Body() {
     // e.target.classList.remove('font-bold')
     e.target.classList.toggle('bg-mid-blue')
     e.target.classList.toggle('text-white')
-
   }
 
   return (
