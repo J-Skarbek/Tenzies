@@ -11,16 +11,16 @@ function Body() {
       dice.push({
         value: Math.ceil(Math.random() * 6),
         isHeld: false,
+        id: i,
       });
     }
-    console.log(dice);
     return dice;
   }
 
   function generateDice() {
     const values = diceValues.map((die, i) =>
         <Die
-          key={i}
+          key={die.id}
           index={i}
           value={die.value}
           holdDice={holdDice}
@@ -45,6 +45,11 @@ function Body() {
     e.target.classList.toggle('bg-mid-blue')
     e.target.classList.toggle('text-white')
   }
+
+  // onclick
+  // check the status of holdDice
+  // if false, toggle to true -- and vice versa
+  // if true -- > apply css style to the button 
 
   console.log(diceValues)
 
