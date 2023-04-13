@@ -18,10 +18,10 @@ function Body() {
   }
 
   function generateDice() {
-    const values = diceValues.map((die, i) =>
+    const values = diceValues.map(die =>
         <Die
           key={die.id}
-          index={i}
+          index={die.id}
           value={die.value}
           holdDice={holdDice}
         />
