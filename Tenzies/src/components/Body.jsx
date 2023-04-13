@@ -23,7 +23,8 @@ function Body() {
           key={die.id}
           index={die.id}
           value={die.value}
-          holdDice={holdDice}
+          isHeld={die.isHeld}
+          // holdDice={holdDice}
         />
     )
     return values
@@ -38,13 +39,18 @@ function Body() {
     setDiceValues(getDiceValues())
   }
 
-  function holdDice(e) {
-    console.log('testing click')
-    console.log(e.target)
-    // e.target.classList.remove('font-bold')
-    e.target.classList.toggle('bg-mid-blue')
-    e.target.classList.toggle('text-white')
-  }
+  // function holdDice(e) {
+  //   console.log('testing click')
+  //   console.log(e.target)
+  //   // e.target.classList.remove('font-bold')
+  //   e.target.classList.toggle('bg-mid-blue')
+  //   e.target.classList.toggle('text-white')
+  // }
+
+  // function holdDice(e) {
+  //   console.log('click success')
+  //   props.isHeld ? console.log('true') : console.log('false');
+  // }
 
   // onclick
   // check the status of holdDice
