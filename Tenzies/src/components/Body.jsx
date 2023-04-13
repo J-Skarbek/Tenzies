@@ -8,8 +8,12 @@ function Body() {
   function getDiceValues() {
     const dice = [];
     for (let i = 0; i < 10; i++) {
-      dice.push(Math.ceil(Math.random() * 6));
+      dice.push({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false,
+      });
     }
+    console.log(dice);
     return dice;
   }
 
@@ -18,12 +22,16 @@ function Body() {
         <Die
           key={i}
           index={i}
-          value={die}
+          value={die.value}
           holdDice={holdDice}
         />
     )
     return values
   }
+
+  //This method of just assigning the return value of .map also works as opposed
+  //to using the generate dice function
+  // const getValues = diceValues.map(die => <Die value={die} />)
 
   function rollDice() {
     // setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
