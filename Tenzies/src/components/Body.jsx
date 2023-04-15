@@ -19,13 +19,6 @@ function Body() {
     }
   }, [diceValues]);
 
-  function makeConfetti() {
-    if (tenzies) {
-      return <Confetti />
-    }
-  }
-
-
   function generateNewDie() {
     return {
       value: Math.ceil(Math.random() * 6),
@@ -77,6 +70,7 @@ function Body() {
 
   return (
     <div className="body-container col-start-6 col-span-5 row-start-2 row-span-3 bg-dark-purple p-8">
+      { tenzies && <Confetti /> }
       <div className="background-overlay bg-bright-yellow p-4 h-full flex flex-col justify-evenly content-center text-center">
         <h2 className="text-5xl font-bold">Tenzies</h2>
         <p className="text-xl">Roll until all dice are the same. 
@@ -87,8 +81,10 @@ function Body() {
         {/* <div className="dice-container-2 flex space-evenly items-center justify-center flex-wrap gap-3">
           { generateDice() }
         </div> */}
-        <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple" onClick={rollDice}>{tenzies ? 'New Game' : 'Roll Dice'}</button>
-        { makeConfetti() }
+        <button 
+          className="roll-dice text-white bg-dark-purple hover:bg-light-purple" 
+          onClick={rollDice}>{tenzies ? 'New Game' : 'Roll Dice'}
+        </button>
       </div>
     </div>
   )
