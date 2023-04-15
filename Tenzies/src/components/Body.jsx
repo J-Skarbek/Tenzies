@@ -80,7 +80,7 @@ function Body() {
         {/* <div className="dice-container-2 flex space-evenly items-center justify-center flex-wrap gap-3">
           { generateDice() }
         </div> */}
-        <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple" onClick={rollDice}>Roll Dice</button>
+        <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple" onClick={rollDice}>{tenzies ? 'New Game' : 'Roll Dice'}</button>
       </div>
     </div>
   )
