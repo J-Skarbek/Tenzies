@@ -1,5 +1,6 @@
 import React from "react";
 import Die from "./Die";
+import {nanoid} from "nanoid"
 
 function Body() {
 
@@ -11,7 +12,7 @@ function Body() {
       dice.push({
         value: Math.ceil(Math.random() * 6),
         isHeld: false,
-        id: i,
+        id: nanoid(),
       });
     }
     return dice;
