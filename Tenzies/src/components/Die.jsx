@@ -7,8 +7,6 @@ function Die(props) {
     color: props.isHeld ? '#000' : '#fff'
   }
 
-  console.log(props.isHeld)
-
   return (
     <div 
       className={

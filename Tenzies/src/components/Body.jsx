@@ -42,14 +42,11 @@ function Body() {
 
   function holdDice(id) {
     setDiceValues(oldDice => oldDice.map(die => {
-      console.log(id, die.id, die.isHeld)
       return die.id === id ? 
         {...die, isHeld: !die.isHeld} :
         die
     }))
   }
-
-  console.log(diceValues)
 
   return (
     <div className="body-container col-start-6 col-span-5 row-start-2 row-span-3 bg-dark-purple p-8">
