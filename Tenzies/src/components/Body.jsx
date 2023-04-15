@@ -40,7 +40,12 @@ function Body() {
   }
 
   function holdDice(id) {
-    console.log(id);
+    setDiceValues(oldDice => oldDice.map(die => {
+      console.log(id, die.id, die.isHeld)
+      return die.id === id ? 
+        {...die, isHeld: !die.isHeld} :
+        die
+    }))
   }
 
   console.log(diceValues)
