@@ -36,15 +36,18 @@ function Body() {
   // const getValues = diceValues.map(die => <Die value={die} />)
 
   function rollDice() {
-    // setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
-    setDiceValues(getDiceValues())
+    setDiceValues(oldDice => oldDice.map(die => {
+      return die.isHeld ? 
+        die : 
+        {...die, value: Math.ceil(Math.random() * 6),id: nanoid()};
+    }))
   }
 
   function holdDice(id) {
     setDiceValues(oldDice => oldDice.map(die => {
       return die.id === id ? 
         {...die, isHeld: !die.isHeld} :
-        die
+        die;
     }))
   }
 
