@@ -6,14 +6,18 @@ function Body() {
 
   const [diceValues, setDiceValues] = React.useState(() => getDiceValues());
 
+  function generateNewDie() {
+    return {
+      value: Math.ceil(Math.random() * 6),
+        isHeld: false,
+        id: nanoid(),
+    }
+  }
+
   function getDiceValues() {
     const dice = [];
     for (let i = 0; i < 10; i++) {
-      dice.push({
-        value: Math.ceil(Math.random() * 6),
-        isHeld: false,
-        id: nanoid(),
-      });
+      dice.push(generateNewDie());
     }
     return dice;
   }
@@ -39,7 +43,7 @@ function Body() {
     setDiceValues(oldDice => oldDice.map(die => {
       return die.isHeld ? 
         die : 
-        {...die, value: Math.ceil(Math.random() * 6),id: nanoid()};
+        generateNewDie();
     }))
   }
 
