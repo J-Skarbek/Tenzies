@@ -5,6 +5,10 @@ import {nanoid} from "nanoid"
 function Body() {
 
   const [diceValues, setDiceValues] = React.useState(() => getDiceValues());
+  const [tenzies, setTenzies] = React.useState(false);
+
+  React.useEffect(diceValues => console.log('Dice values changed.'));
+  
 
   function generateNewDie() {
     return {
