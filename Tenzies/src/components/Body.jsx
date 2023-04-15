@@ -43,24 +43,6 @@ function Body() {
     console.log(id);
   }
 
-  // function holdDice(e) {
-  //   console.log('testing click')
-  //   console.log(e.target)
-  //   // e.target.classList.remove('font-bold')
-  //   e.target.classList.toggle('bg-mid-blue')
-  //   e.target.classList.toggle('text-white')
-  // }
-
-  // function holdDice(e) {
-  //   console.log('click success')
-  //   props.isHeld ? console.log('true') : console.log('false');
-  // }
-
-  // onclick
-  // check the status of holdDice
-  // if false, toggle to true -- and vice versa
-  // if true -- > apply css style to the button 
-
   console.log(diceValues)
 
   return (

@@ -7,12 +7,6 @@ function Die(props) {
     color: props.isHeld ? '#000' : '#fff'
   }
 
-  // function holdDice(e) {
-  //   console.log('click success')
-  //   !props.isHeld ? props.isHeld : !props.isHeld;
-  //   console.log(props.isHeld)
-  // }
-
   return (
     <div 
       className={
