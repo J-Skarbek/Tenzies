@@ -24,7 +24,7 @@ function Body() {
           index={die.id}
           value={die.value}
           isHeld={die.isHeld}
-          // holdDice={holdDice}
+          holdDice={() => holdDice(die.id)}
         />
     )
     return values
@@ -37,6 +37,10 @@ function Body() {
   function rollDice() {
     // setDiceValues(diceValues.map(die => Math.ceil(Math.random() * 6)))
     setDiceValues(getDiceValues())
+  }
+
+  function holdDice(id) {
+    console.log(id);
   }
 
   // function holdDice(e) {
