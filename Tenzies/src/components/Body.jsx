@@ -7,8 +7,16 @@ function Body() {
   const [diceValues, setDiceValues] = React.useState(() => getDiceValues());
   const [tenzies, setTenzies] = React.useState(false);
 
-  React.useEffect(diceValues => console.log('Dice values changed.'));
-  
+  React.useEffect(() => {
+    const allHeld = diceValues.every(die => die.isHeld);
+    const firstDie = diceValues[0].value;
+    const allSameValue = diceValues.every(die => die.value === firstDie);
+    if (allHeld && allSameValue) {
+      setTenzies(true)
+      console.log('Player Wins!')
+    }
+  }, [diceValues]);
+
 
   function generateNewDie() {
     return {
