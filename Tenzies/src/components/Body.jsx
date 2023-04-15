@@ -15,8 +15,15 @@ function Body() {
     if (allHeld && allSameValue) {
       setTenzies(true)
       console.log('Player Wins!')
+
     }
   }, [diceValues]);
+
+  function makeConfetti() {
+    if (tenzies) {
+      return <Confetti />
+    }
+  }
 
 
   function generateNewDie() {
@@ -81,6 +88,7 @@ function Body() {
           { generateDice() }
         </div> */}
         <button className="roll-dice text-white bg-dark-purple hover:bg-light-purple" onClick={rollDice}>{tenzies ? 'New Game' : 'Roll Dice'}</button>
+        { makeConfetti() }
       </div>
     </div>
   )
